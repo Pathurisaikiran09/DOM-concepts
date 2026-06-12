@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Events</title>
+    </head>
+    <body>
+        <!--click event-->
+        <button onclick="showMessage()">Click Me</button>
+        <br>
+        <br>
+        <!--Double click Event-->
+        <button ondblclick="dblClick()">Double Click</button>
+        <p id="p1"></p>
+        <!--Mouse Down Event-->
+        <p onmousedown="changeColor(this)">Press Mouse Here</p>
+        <!--Mouse Up Event-->
+        <p onmouseup="changeFont(this)">Place the Pointer Here</p>
+        <script>
+            function showMessage(){
+                alert("Button Clicked");
+            }
+            function dblClick(){
+              document.getElementById('p1').innerHTML="Double clicked";
+            }
+            function changeColor(element){
+             element.style.color='red';
+            } 
+            function changeFont(element){
+                element.style.fontstyle ='bold';
+            }
+        </script>
+    </body>
+</html>

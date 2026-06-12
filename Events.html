@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events </title>
+</head>
+<body>
+    <!--The onclick Attribute--->
+    <button onclick="document.getElementById('hi').innerHTML='Hi'">Click me</button>
+    <h2 id="hi"></h2>
+    <button onclick="this.innerHTML='Following'">Follow</button>
+    <!--Change text-->
+    <h2 id="title">Hello</h2>
+    <button onclick="changeText()">Change Text</button>
+    <!--Event listeners-->
+    <script>
+        function changeText(){
+            document.getElementById("title").innerHTML= "Welcome To JavaScript";
+           
+        }
+    </script>
+</body>
+</html>
