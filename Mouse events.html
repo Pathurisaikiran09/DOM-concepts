@@ -2,6 +2,13 @@
 <html>
     <head>
         <title>Mouse Events</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+                border: solid;
+            }
+        </style>
     </head>
     <body>
         <!--click event-->
@@ -12,9 +19,20 @@
         <button ondblclick="dblClick()">Double Click</button>
         <p id="p1"></p>
         <!--Mouse Down Event-->
-        <p onmousedown="changeColor(this)">Press Mouse Here</p>
+        <p onmousedown="changeColor(this)"
+        >Press Mouse Here</p>
         <!--Mouse Up Event-->
-        <p onmouseup="changeFont(this)">Place the Pointer Here</p>
+        <div class="box">
+        <p onmouseup="changeFont(this)"
+        onmouseout="resetFont(this)"
+        id="para"
+        >Place the Pointer Here</p>
+        </div>
+        <br>
+        <br>
+        <div class="box">
+            <p id="demo" >Move Mouse here</p>
+        </div>
         <script>
             function showMessage(){
                 alert("Button Clicked");
@@ -26,8 +44,18 @@
              element.style.color='red';
             } 
             function changeFont(element){
-                element.style.fontstyle ='bold';
+          document.getElementById('para').innerHTML='Mouse out'
+                element.style.fontStyle ='oblique';
             }
+            function resetFont(element){
+                element.style.fontStyle='normal';
+            }
+             document.getElementById("demo")
+             .addEventListener("mousemove",function(event){
+                document.getElementById("demo").innerHTML=
+                "X:"+ event.clientX+
+                "Y:"+event.clientY;
+             })
         </script>
     </body>
 </html>

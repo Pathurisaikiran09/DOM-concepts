@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Keyboard Events</title>
+        <style>
+            div{
+                width: 180px;
+                height:180px;
+                font-size: 8rem;
+                background-color: chocolate;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Keyboard Events</h1>
+        <!--keydown event-->
+        <h2>keydown Event</h2>
+        <input type="text" id="box" placeholder="Enter a key">
+        <p id="p1"></p>
+        <div id="emoji" tabindex="0">&#128515;</div>
+        <script>
+            document.getElementById("box")
+            .addEventListener("keydown", function(event){
+           document.getElementById("p1").innerHTML= "You Enter " +event.key;
+            })
+            const emoji=document.getElementById("emoji");
+            document.getElementById("emoji")
+            .addEventListener("keydown",event=>{
+                emoji.textContent="😊";
+                emoji.style.backgroundColor='red';
+            })
+let x = 0;
+let y = 0;
+
+document.addEventListener("keydown", event => {
+
+    if(event.key === "ArrowUp"){
+        y -= 20;
+    }
+
+    if(event.key === "ArrowDown"){
+        y += 20;
+    }
+
+    if(event.key === "ArrowLeft"){
+        x -= 20;
+    }
+
+    if(event.key === "ArrowRight"){
+        x += 20;
+    }
+
+    emoji.style.top = y + "px";
+    emoji.style.left = x + "px";
+
+});
+        </script>
+    </body>
+</html>
